@@ -13,12 +13,11 @@ direc_font = f"{aux.direc}/mines img/CONSOLA.TTF"
 ZERO = "0"
 def zerocomp(points, num_of_z):
     if points > 0:
-        fnum = f" {ZERO*(num_of_z-int(math.log(points, 10))-1)}{points}"
+        return f" {ZERO*(num_of_z-int(math.log(points, 10))-1)}{points}"
     elif points == 0:
-        fnum = f" {ZERO*num_of_z}"
+        return f" {ZERO*num_of_z}"
     else:
-        fnum = f"-{ZERO*(num_of_z-int(math.log(abs(points), 10))-1)}{abs(points)}"
-    return fnum
+        return f"-{ZERO*(num_of_z-int(math.log(abs(points), 10))-1)}{abs(points)}"
 
 font  = pygame.font.Font(direc_font, int(aux.screen_y*.12))
 arrow = pygame.image.load(f"{aux.direc}/mines img/arrow.png")
